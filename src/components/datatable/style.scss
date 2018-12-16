@@ -129,12 +129,14 @@ i {
 	border-radius: 3px;
 	background: #fafafa;
 	box-shadow: 0 1px 1px -1px rgba(0,0,0,0.2);
+	color: black;
 	&:hover {
 		background: #f9f9f9;
 		box-shadow: 0 1px 6px -1px rgba(0,0,0,0.2);
 	}
 	&:active {
 		box-shadow: none;
+		color: black;
 	}
 }
 .input {
