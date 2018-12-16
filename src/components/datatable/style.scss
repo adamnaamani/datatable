@@ -49,11 +49,19 @@ html, body {
 	width: 100vw; min-height: 100vh;
 	margin: 0; padding: 0;
 }
+html {
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+}
 body *:not(i) {
 	outline: none;
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
 	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 12px;
   line-height: 130%;
