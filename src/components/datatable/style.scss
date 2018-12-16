@@ -95,6 +95,9 @@ i {
 }
 .payments-search {
 	@extend %clearfix;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 	position: relative;
 	z-index: 2;
 	background: #fff;

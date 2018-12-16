@@ -17,7 +17,7 @@ The entire process took roughly 3 days, with most of the time spent during Satur
 
 ## Component Adaptation
 
-The Datatable component is modular as is, since it pulls in data from Vuex and Firebase. I would add more custom functionality with regards to selecting columns, modifying rows, and having more CRUD functionality, however that was beyond the scope of the requirements.
+The Datatable component is modular as is, since it pulls in data from Vuex and Firebase. I would add more custom functionality in regards to selecting columns, modifying rows, pagination, CRUD options, etc., however that was beyond the scope of the requirements.
 
 ## Favorite CSS property
 
