@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
 	mounted() {
 		return new Promise(resolve => {
@@ -9,7 +7,7 @@ export default {
 		}).then(_=> {
 			setTimeout(_=> {
 				this.$store.commit('stopLoading')
-			}, 1000)
+			}, 500)
 		})
 	},
 	computed: {
