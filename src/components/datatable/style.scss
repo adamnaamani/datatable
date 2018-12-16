@@ -45,6 +45,13 @@ table {
 }
 
 /*Custom*/
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 html, body {
 	width: 100vw; min-height: 100vh;
 	margin: 0; padding: 0;
@@ -87,14 +94,17 @@ i {
 	padding: 20px;
 }
 .payments-search {
+	@extend %clearfix;
 	position: relative;
 	z-index: 2;
+	background: #fff;
 	.search-input {
 		width: 100%; 
 		margin: 10px auto 20px; padding: 10px;
 		font-family: inherit;
 		border-radius: 1px;
 		border: 2px solid #eaeaea;
+		box-shadow: none;
 		&:hover {
 			border-color: #cacaca;
 		}
@@ -104,21 +114,23 @@ i {
 	}
 }
 .payments-table {
+	@extend %clearfix;
 	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
 	margin: 100px 30px 30px;
 	z-index: 1;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	background: #fff;
 	.row {
+		background: #fff;
 		min-width: 768px;
 		display: grid;
 		grid-template-columns: 25% 10% 35% 15% 15%;
-		grid-gap: 0px;
-  	padding: 5px 0;
+		grid-gap: 0;
+  	margin: 0; padding: 5px 10px;
 		&:first-child {
 			font-weight: bold;
 			border-bottom: 2px solid #eaeaea;
-			padding: 10px 0;
 		}
 		&:nth-child(even) {
 			background: #fafafa;
