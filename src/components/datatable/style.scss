@@ -84,24 +84,29 @@ i {
 	z-index: 2;
 	.search-input {
 		width: 100%; 
-		margin: 10px auto; padding: 10px;
+		margin: 10px auto 20px; padding: 10px;
 		font-family: inherit;
 		border-radius: 1px;
-		border: 1px solid #eaeaea;
+		border: 2px solid #eaeaea;
+		&:hover {
+			border-color: #cacaca;
+		}
 		&:focus {
-			border: 1px solid #ccc;
+			border-color: #00b0ff;
 		}
 	}
 }
 .payments-table {
+	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+	margin: 100px 30px 30px;
 	z-index: 1;
-	min-width: 960px;
 	overflow: auto;
 	.row {
+		min-width: 768px;
 		display: grid;
-		grid-template-columns: 0.2fr 0.1fr 0.45fr 0.2fr 0.05fr;
+		grid-template-columns: 25% 10% 35% 15% 15%;
 		grid-gap: 0px;
-		padding: 5px 0;
+  	padding: 5px 0;
 		&:first-child {
 			font-weight: bold;
 			border-bottom: 2px solid #eaeaea;
@@ -128,8 +133,11 @@ i {
 	border: 1px solid transparent;
 	border-radius: 3px;
 	background: #fafafa;
-	box-shadow: 0 1px 1px -1px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 1px -1px rgba(0,0,0,0.4);
 	color: black;
+	&:first-child {
+		margin: 0 5px 0 0;
+	}
 	&:hover {
 		background: #f9f9f9;
 		box-shadow: 0 1px 6px -1px rgba(0,0,0,0.2);

@@ -1,0 +1,15 @@
+{
+	"name": "Adam",
+	"email": "adamnaamani@gmail.com",
+	"resume": "https://s3-us-west-1.amazonaws.com/seizo/documents/resume.pdf",
+	"description": {
+		"location": "Vancouver, British Columbia",
+		"education": "Bachelor of Business in Real Estate, Diploma in Urban Land Economics, Diploma in Business Administration.",
+		"skills": "Humble roots with PHP/Codeigniter. Ruby on Rails, Vue.js, AWS.",
+		"experience": "Over a decade in residential real estate (relative to fintech). Four years building a proptech startup. Automated current job with Ruby/Rails. Top seller on Fiverr for web services.",
+		"dependencies": {
+			"coffee": 3
+		},
+		"handsome": true
+	}
+}
