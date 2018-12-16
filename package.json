@@ -8,10 +8,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "mocha-webpack src/**/*.spec.js --require test-setup",
     "start": "node server.js",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -23,6 +25,7 @@
     "fernet": "^0.3.1",
     "file-loader": "^1.1.4",
     "firebase": "^5.7.0",
+    "mocha-webpack": "^1.1.0",
     "moment": "^2.23.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
@@ -41,6 +44,10 @@
     "not ie <= 8"
   ],
   "devDependencies": {
+    "chai": "^4.2.0",
+    "jsdom": "^13.1.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.2.0",
     "webpack-dev-server": "^2.11.1"
   }
 }

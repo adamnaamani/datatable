@@ -51,7 +51,6 @@ html, body {
 }
 html {
 	scroll-behavior: smooth;
-	-webkit-overflow-scrolling: touch;
 }
 body *:not(i) {
 	outline: none;
@@ -109,6 +108,7 @@ i {
 	margin: 100px 30px 30px;
 	z-index: 1;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	.row {
 		min-width: 768px;
 		display: grid;
@@ -168,8 +168,11 @@ i {
 	z-index: 3;
 	position: absolute;
 	bottom: 0; right: 0;
+	margin: 10px;
+	background: rgba(52, 73, 94, 0.6);
+	border-radius: 1px;
   p {
-		color: #00FF00; font-size: 20px;
-		padding: 20px;
+		color: #00FF00; font-size: 14px;
+		padding: 10px 30px;
 	}
 }	

@@ -1,4 +1,4 @@
-<div>
+<div class="foo">
 	<div v-if="$store.state.loading" class="loading">
 		<p>Loading payments...</p>
 	</div>
@@ -40,16 +40,16 @@
 				</div>
 			</div>
 			<div class="row" v-for="(item, index) in filteredPayments">
-				<div class="column"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].id" class="input"/></div>
-				<div class="column"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].name" class="input"/></div>
-				<div class="column"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].description" class="input"/></div>
-				<div class="column"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].date" class="input"/></div>
-				<div class="column"><vue-numeric @keyup.native="editPayment(filteredPayments[index].id)" :minus="true" :precision="2" currency="$" v-model="filteredPayments[index].amount" class="input"></vue-numeric></div>
+				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].id" class="input"/></div>
+				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].name" class="input"/></div>
+				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].description" class="input"/></div>
+				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].date" class="input"/></div>
+				<div class="column"><vue-numeric @change.native="editPayment(filteredPayments[index].id)" :minus="true" :precision="2" currency="$" v-model="filteredPayments[index].amount" class="input"></vue-numeric></div>
 			</div>
 		</div>
 		<transition name="fade">
 			<div v-if="$store.state.saved" class="notifications">
-				<p>Saved!</p>
+				<p>Changes Saved!</p>
 			</div>
 		</transition>
 	</div>
