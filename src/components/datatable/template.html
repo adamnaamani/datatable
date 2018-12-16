@@ -1,0 +1,67 @@
+<div>
+	<div v-if="$store.state.loading" class="loading">
+		<p>Loading payments...</p>
+	</div>
+	<div v-else class="payments" v-cloak>
+		<div class="payments-search">
+			<input v-model="$store.state.search" type="text" class="search-input" placeholder="Search for anything..." autofocus/>
+		</div>
+		<div class="payments-table">
+			<table>
+				<thead>
+					<tr>
+						<th width="20%" @click="sortBy('id')">
+							<span v-if="$store.state.sort.category == 'id'">
+								<i v-if="$store.state.sort.direction == 'desc'" class="fas fa-sort-amount-down"></i>
+								<i v-if="$store.state.sort.direction == 'asc'" class="fas fa-sort-amount-up"></i>
+							</span>
+							ID
+						</th>
+						<th width="15%" @click="sortBy('name')">
+							<span v-if="$store.state.sort.category === 'name'">
+								<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
+								<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
+							</span>
+							Name
+						</th>
+						<th width="35%" @click="sortBy('description')">
+							<span v-if="$store.state.sort.category === 'description'">
+								<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
+								<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
+							</span>							
+							Description
+						</th>
+						<th width="15%" @click="sortBy('date')">
+							<span v-if="$store.state.sort.category === 'date'">
+								<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
+								<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
+							</span>							
+							Date
+						</th>
+						<th width="15%" @click="sortBy('amount')">
+							<span v-if="$store.state.sort.category === 'amount'">
+								<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
+								<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
+							</span>							
+							Amount
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item, index) in filteredPayments">
+						<td width="20%"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].id" class="input"/></td>
+						<td width="15%"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].name" class="input"/></td>
+						<td width="35%"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].description" class="input"/></td>
+						<td width="15%"><input @keyup="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].date" class="input"/></td>
+						<td width="15%"><vue-numeric @keyup.native="editPayment(filteredPayments[index].id)" :minus="true" :precision="2" currency="$" v-model="filteredPayments[index].amount" class="input"></vue-numeric></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<transition name="fade">
+			<div v-if="$store.state.saved" class="notifications">
+				<p>Saved!</p>
+			</div>
+		</transition>
+	</div>
+</div>
