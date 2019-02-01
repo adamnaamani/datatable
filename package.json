@@ -1,6 +1,6 @@
 {
-  "name": "britecore",
-  "description": "BriteCore Application",
+  "name": "datatable",
+  "description": "Datatable Component",
   "version": "1.0.0",
   "author": "Adam Naamani <adamnaamani@gmail.com>",
   "license": "MIT",
@@ -48,6 +48,6 @@
     "jsdom": "^13.1.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^5.2.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.14"
   }
 }

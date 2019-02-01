@@ -1,11 +1,11 @@
-# BriteCore
+# Vue Datatable Component
 
-> BriteCore Application for Front-End Engineer
+> BriteCore Application for Front-End Developer
 
-* [BriteCore datatable hosted on Heroku](https://britecore-application.herokuapp.com/)
+* [Datatable Component hosted on Heroku](https://britecore-application.herokuapp.com/)
 
 
-## Stack
+## Tech
 
 * [Vue](https://vuejs.org)
 * [Firebase](https://firebase.google.com)
