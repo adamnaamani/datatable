@@ -4,6 +4,18 @@
 
 * [Datatable Component hosted on Heroku](https://britecore-application.herokuapp.com/)
 
+## Function
+**Search**
+
+Dynamic full-text search for every column.
+
+**Sorting**
+
+Click on column header to sort.
+
+**Editing**
+
+All changes are saved to Firebase once a cell is edited.
 
 ## Tech
 
