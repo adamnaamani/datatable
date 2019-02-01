@@ -4,6 +4,13 @@
 
 * [Datatable Component hosted on Heroku](https://britecore-application.herokuapp.com/)
 
+## Tech
+
+* [Vue](https://vuejs.org)
+* [Firebase](https://firebase.google.com)
+* [Heroku](https://www.heroku.com/home)
+
+
 ## Function
 **Search**
 
@@ -17,11 +24,6 @@ Click on column header to sort.
 
 All changes are saved to Firebase once a cell is edited.
 
-## Tech
-
-* [Vue](https://vuejs.org)
-* [Firebase](https://firebase.google.com)
-* [Heroku](https://www.heroku.com/home)
 
 ## Time Spent
 
