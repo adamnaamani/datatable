@@ -8,10 +8,14 @@ import 'firebase/database'
 import 'firebase/firestore'
 import axios from 'axios'
 import Datatable from './components/datatable/index.vue'
+import ShardsVue from 'shards-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'shards-ui/dist/css/shards.css'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(VueFire)
+Vue.use(ShardsVue)
 Vue.use(VueNumeric)
 
 firebase.initializeApp({
@@ -22,9 +26,7 @@ firebase.initializeApp({
   storageBucket: 'vue-application-7a3c2.appspot.com',
   messagingSenderId: '704800369746'
 })
-const firestoreSettings = { timestampsInSnapshots: true }
 const firestore = firebase.firestore()
-firestore.settings(firestoreSettings)
 
 const store = new Vuex.Store({
 	state: {

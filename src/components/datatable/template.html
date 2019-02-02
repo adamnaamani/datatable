@@ -6,33 +6,50 @@
 		<div class="payments-search">
 			<input v-model="$store.state.search" type="text" class="search-input" placeholder="Search for anything..."/>
 		</div>
+		<div class="payments-filters">
+			<d-form inline>
+				<d-button class="mb-2 mr-sm-2 mb-sm-0">Primary</d-button>
+				<d-button-group outline squared class="mb-2 mr-sm-2 mb-sm-0">
+			    <d-button>Left</d-button>
+			    <d-button>Middle</d-button>
+			    <d-button>Right</d-button>
+				</d-button-group>
+				<d-dropdown outline squared text="Dropdown">
+			    <d-dropdown-item>Action</d-dropdown-item>
+			    <d-dropdown-item>Another action</d-dropdown-item>
+			    <d-dropdown-item>Something else here</d-dropdown-item>
+			    <d-dropdown-divider />
+			    <d-dropdown-item>Separated link</d-dropdown-item>
+				</d-dropdown>
+			</d-form>
+		</div>
 		<div class="payments-table">
 			<div class="row">
-				<div class="column" @click="sortBy('id')">
+				<div class="column header" @click="sortBy('id')">
 					<span v-if="$store.state.sort.category == 'id'">
 						<i v-if="$store.state.sort.direction == 'desc'" class="fas fa-sort-amount-down"></i>
 						<i v-if="$store.state.sort.direction == 'asc'" class="fas fa-sort-amount-up"></i>
-					</span>ID						
+					</span>ID
 				</div>
-				<div class="column" @click="sortBy('name')">
+				<div class="column header" @click="sortBy('name')">
 					<span v-if="$store.state.sort.category === 'name'">
 						<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
 						<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
 					</span>Name
 				</div>						
-				<div class="column" @click="sortBy('description')">
+				<div class="column header" @click="sortBy('description')">
 					<span v-if="$store.state.sort.category === 'description'">
 						<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
 						<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
 					</span>Description
 				</div>
-				<div class="column" @click="sortBy('date')">
+				<div class="column header" @click="sortBy('date')">
 					<span v-if="$store.state.sort.category === 'date'">
 						<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
 						<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>
 					</span>Date
 				</div>
-				<div class="column" @click="sortBy('amount')">
+				<div class="column header" @click="sortBy('amount')">
 					<span v-if="$store.state.sort.category === 'amount'">
 						<i v-if="$store.state.sort.direction === 'desc'" class="fas fa-sort-amount-down"></i>
 						<i v-if="$store.state.sort.direction === 'asc'" class="fas fa-sort-amount-up"></i>

@@ -13,7 +13,6 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
@@ -44,7 +43,15 @@ table {
   border-spacing: 0;
 }
 
-/*Custom*/
+/*Transitions*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/*Datatable*/
 %clearfix {
   &:after {
     content: "";
@@ -64,25 +71,13 @@ body *:not(i) {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-	font-family: 'Helvetica Neue', sans-serif;
-	font-size: 12px;
-  line-height: 130%;
 }
 i {
 	margin: 0 5px 0 0;
 }
 [v-cloak], .hide {
 	display: none;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
 }
 .loading {
 	display: flex;
@@ -91,7 +86,7 @@ i {
 	height: 100vh;
 }
 .payments {
-	padding: 20px;
+	padding: 10px;
 }
 .payments-search {
 	@extend %clearfix;
@@ -119,11 +114,12 @@ i {
 .payments-table {
 	@extend %clearfix;
 	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
-	margin: 100px 30px 30px;
+	margin: 150px 10px 10px;
 	z-index: 1;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	background: #fff;
+	font-size: 13px;
 	.row {
 		background: #fff;
 		min-width: 768px;
@@ -144,7 +140,10 @@ i {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		&:hover {
-			text-decoration: underline;
+			color: black;
+		}
+		&.header {
+			padding: 0 5px;
 		}
 	}
 }
@@ -172,22 +171,24 @@ i {
 }
 .input {
 	width: 100%;
-	font-family: inherit;
-	margin: 0; padding: 5px 5px 5px 0;
-	border: none;
+	margin: 0; padding: 5px;
+	border: 1px solid transparent;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	background: transparent;
+	&:focus {
+		border-bottom: 1px solid;
+	}
 }
 .notifications {
 	z-index: 3;
 	position: absolute;
 	bottom: 0; right: 0;
 	margin: 10px;
-	background: rgba(52, 73, 94, 0.6);
-	border-radius: 1px;
+	background: #1dd1a1;
+	border-radius: 3px;
   p {
-		color: #00FF00; font-size: 14px;
+		color: #fff; font-size: 14px;
 		padding: 10px 30px;
 	}
 }	

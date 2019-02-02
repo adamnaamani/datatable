@@ -10,6 +10,20 @@ export default {
 			}, 500)
 		})
 	},
+	data() {
+		return {
+			date: new Date(),
+			selected: null,
+			checked: null,
+			sliderValue: ['10.00', '80.00'],
+			options: [
+        { value: null, text: 'Please select an option' },
+        { value: 'first', text: 'This is the first option' },
+        { value: 'second', text: 'This is the second option' },
+        { value: 'disabled', text: 'This one is disabled', disabled: true }
+      ]
+		}
+	},
 	computed: {
 		filteredPayments() {
 			let self = this
