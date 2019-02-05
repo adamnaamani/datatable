@@ -6,23 +6,6 @@
 		<div class="payments-search">
 			<input v-model="$store.state.search" type="text" class="search-input" placeholder="Search for anything..."/>
 		</div>
-		<div class="payments-filters">
-			<d-form inline>
-				<d-button class="mb-2 mr-sm-2 mb-sm-0">Primary</d-button>
-				<d-button-group outline squared class="mb-2 mr-sm-2 mb-sm-0">
-			    <d-button>Left</d-button>
-			    <d-button>Middle</d-button>
-			    <d-button>Right</d-button>
-				</d-button-group>
-				<d-dropdown outline squared text="Dropdown">
-			    <d-dropdown-item>Action</d-dropdown-item>
-			    <d-dropdown-item>Another action</d-dropdown-item>
-			    <d-dropdown-item>Something else here</d-dropdown-item>
-			    <d-dropdown-divider />
-			    <d-dropdown-item>Separated link</d-dropdown-item>
-				</d-dropdown>
-			</d-form>
-		</div>
 		<div class="payments-table">
 			<div class="row">
 				<div class="column header" @click="sortBy('id')">
@@ -56,6 +39,7 @@
 					</span>Amount
 				</div>
 			</div>
+			<div class="row-break"></div>
 			<div class="row" v-for="(item, index) in filteredPayments">
 				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].id" class="input"/></div>
 				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].name" class="input"/></div>

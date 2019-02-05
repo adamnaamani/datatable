@@ -114,7 +114,7 @@ i {
 .payments-table {
 	@extend %clearfix;
 	position: fixed; top: 0; right: 0; bottom: 0; left: 0;
-	margin: 150px 10px 10px;
+	margin: 100px 10px 10px;
 	z-index: 1;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
@@ -128,13 +128,18 @@ i {
 		grid-gap: 0;
   	margin: 0; padding: 5px 10px;
 		&:first-child {
+			position: fixed; 
+			width: 100%;
 			font-weight: bold;
 			border-bottom: 2px solid #eaeaea;
 		}
 		&:nth-child(even) {
 			background: #fafafa;
 		}
-	}	
+	}
+	.row-break {
+		width: 100%; height: 30px;
+	}		
 	.column {
 		cursor: pointer;
 		white-space: nowrap;
