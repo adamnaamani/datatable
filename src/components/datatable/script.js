@@ -1,3 +1,6 @@
+import Vuex from 'vuex'
+import { mapGetters } from 'vuex'
+
 export default {
 	mounted() {
 		return new Promise(resolve => {
@@ -25,6 +28,9 @@ export default {
 		}
 	},
 	computed: {
+		...mapGetters([
+			'getSearch'
+		]),
 		filteredPayments() {
 			let self = this
 			let search = this.$store.getters.getSearch
