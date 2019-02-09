@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { mapGetters } from 'vuex'
+import moment from 'moment'
 import VueFire from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/database'
@@ -8,6 +9,7 @@ import 'firebase/firestore'
 
 Vue.use(Vuex)
 Vue.use(VueFire)
+Vue.prototype.moment = moment
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBTOh2WE0m8A4qF6rq6MIJAPscMFHAqOEM',
@@ -23,7 +25,7 @@ export const store = new Vuex.Store({
 	state: {
 		loading: false, saved: false,
 		url: 'https://s3-us-west-1.amazonaws.com/seizo/json/payments-data.json',
-		sort: { category: 'date', direction: 'desc' },
+		sort: { category: 'name', direction: 'desc' },
 		search: '',
 		payments: []
 	},
@@ -61,7 +63,7 @@ export const store = new Vuex.Store({
 				id: payload.id,
 			  name: payload.name,
 			  description: payload.description,
-			  date: payload.date,
+			  date: moment(payload.date).format(),
 			  amount: payload.amount
 			}, { merge: true }).then(function() {
 				store.state.saved = true
@@ -90,7 +92,10 @@ export const store = new Vuex.Store({
 		findPayment: (state, payload) => {
 			let payment = store.state.payments.find(x => x.id === payload)
 			store.dispatch('editPayment', payment)
-		}		
+		},
+		formatDate: (state, payload) => {
+			return moment(payload).format()
+		}				
 	},
 	getters: {
 		getSearch: (state) => {
