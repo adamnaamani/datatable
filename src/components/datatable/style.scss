@@ -140,8 +140,10 @@ i {
 	}		
 	.column {
 		cursor: pointer;
-		white-space: nowrap;
-		text-overflow: ellipsis;
+		&.input {
+			white-space: nowrap;
+			text-overflow: ellipsis;			
+		}
 		&:hover {
 			color: black;
 		}
@@ -195,3 +197,11 @@ i {
 		padding: 10px 30px;
 	}
 }	
+.custom-datepicker {
+	outline: none;
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: inherit; font-family: inherit;
+	line-height: 230%;
+}

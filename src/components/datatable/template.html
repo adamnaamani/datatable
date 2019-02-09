@@ -44,8 +44,12 @@
 				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].id" class="input"/></div>
 				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].name" class="input"/></div>
 				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].description" class="input"/></div>
-				<div class="column"><input @change="editPayment(filteredPayments[index].id)" type="text" v-model="filteredPayments[index].date" class="input"/></div>
-				<div class="column"><vue-numeric @change.native="editPayment(filteredPayments[index].id)" :minus="true" :precision="2" currency="$" v-model="filteredPayments[index].amount" class="input"></vue-numeric></div>
+				<div class="column">
+					<d-datepicker @selected="editPayment(filteredPayments[index].id)" v-model="filteredPayments[index].date" :input-class="'custom-datepicker'" />
+				</div>
+				<div class="column">
+					<vue-numeric @change.native="editPayment(filteredPayments[index].id)" :minus="true" :precision="2" currency="$" v-model="filteredPayments[index].amount" class="input"></vue-numeric>
+				</div>
 			</div>
 		</div>
 		<transition name="fade">
