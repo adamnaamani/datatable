@@ -58,10 +58,8 @@ editPayment: ({commit}, payload) => {
     amount: payload.amount
   }, { merge: true }).then(function() {
     store.state.saved = true
-    setTimeout(_=> {
-	  store.state.saved = false
-	}, 3000)
-		console.log('Document successfully written!')
+    setTimeout(_=> { store.state.saved = false }, 3000)
+    console.log('Document successfully written!')
   }).catch(function(error) {
     console.error('Error writing document: ', error)
   })
