@@ -14,6 +14,7 @@
 
 
 ## Function
+
 **Search**
 
 * Dynamic full-text search for every column.
@@ -30,6 +31,7 @@
 ## Example
 
 Fetching Payments
+
 ```javascript
 fetchPayments: ({commit}) => {
   let paymentsArray = []
@@ -45,20 +47,21 @@ fetchPayments: ({commit}) => {
 ```
 
 Editing Payments
+
 ```javascript
 editPayment: ({commit}, payload) => {
   firestore.collection('payments').doc(payload.id).set({
     id: payload.id,
-	name: payload.name,
+    name: payload.name,
     description: payload.description,
-	date: moment(payload.date).format(),
-	amount: payload.amount
+    date: moment(payload.date).format(),
+    amount: payload.amount
   }, { merge: true }).then(function() {
     store.state.saved = true
     setTimeout(_=> {
 	  store.state.saved = false
 	}, 3000)
-	console.log('Document successfully written!')
+		console.log('Document successfully written!')
   }).catch(function(error) {
     console.error('Error writing document: ', error)
   })
